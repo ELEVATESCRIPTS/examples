@@ -16,7 +16,16 @@ variables:
 
   # Web app name
   webAppName: 'xpertlab'
-
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Nur Hossain(94ea4081-f1b6-4762-93cc-13c5304c7707)'
+    appType: 'webAppLinux'
+    appName: 'xpertlab'
+    deployToSlotOrASE: true
+    resourceGroupName: 'xpertlab'
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'NODE|18-lts'
   # Environment name
   environmentName: 'xpertlab'
 
